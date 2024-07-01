@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        button {
+            border: 1px solid rgba(0, 119, 255, 0.949);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center h-[100vh] bg-[url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center bg-fixed bg-no-repeat">
+    <input type="text" id="display" readonly placeholder="0" class="border-[1px] border-black text-right w-[350px] h-[60px] rounded-[3px] text-[30px] bg-transparent backdrop-blur-[5px] text-slate-800">
+    <div id="calculator" class="w-[350px] mt-[1px] p-[10px] rounded-[3px] border-[1px] border-black backdrop-blur-[8px]">
+
+        <div class="flex flex-col justify-center items-center w-[100%] text-[25px] text-black gap-[10px]">
+            <div class="flex items-center justify-around w-full">
+                <button class="bg-transparent backdrop-blur-[200px] w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('7')">7</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('8')">8</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('9')">9</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%] text-green-500 text-[30px] flex justify-center items-center" onclick="appendToDisplay('/')">/</button>
+            </div>
+
+            <div class="flex items-center justify-around w-full">
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('4')">4</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('5')">5</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('6')">6</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%] text-green-500 text-[40px] flex justify-center" onclick="appendToDisplay('*')">x</button>
+            </div>
+
+            <div class="flex items-center justify-around w-full">
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('1')">1</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('2')">2</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('3')">3</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%] text-green-500 text-[40px] flex justify-center" onclick="appendToDisplay('-')">-</button>
+            </div>
+
+            <div class="flex items-center justify-around w-full">
+                <button class=" w-[70px] h-[70px] rounded-[50%] text-red-500" onclick="clearDisplay()">C</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%] text-gray-800" onclick="appendToDisplay('.')">.</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%]" onclick="appendToDisplay('0')">0</button>
+                <button class=" w-[70px] h-[70px] rounded-[50%] text-green-500 text-[40px] flex justify-center" onclick="appendToDisplay('+')">+</button>
+            </div>
+            
+            <div class="flex items-center justify-around w-full">
+                <button class="bg-green-600 w-[150px] h-[50px] rounded-[7px] text-[40px] flex items-center justify-center border-[0px]" onclick="calculate()">
+                    <h1 class="text-white relative bottom-[4.6px]">=</h1>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
